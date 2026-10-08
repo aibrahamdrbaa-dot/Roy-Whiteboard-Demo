@@ -6,415 +6,98 @@ import {
 } from "@excalidraw/excalidraw";
 import "@excalidraw/excalidraw/index.css";
 
-const ink = "#1f2329";
-const accent = "#f2b33d";
-const blue = "#d9ecff";
-const green = "#ddf4df";
-const yellow = "#fff2b8";
-const pink = "#ffe0e8";
-const paper = "#fbfaf5";
-
 const elements = [
-  {
-    type: "text",
-    x: 120,
-    y: 60,
-    text: "FIELD PRODUCTION PLAN",
-    fontSize: 32,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 122,
-    y: 102,
-    text: "تصوير فعالية ميدانية — غرفة قيادة صغيرة",
-    fontSize: 18,
-    strokeColor: "#5f646c",
-  },
-  {
-    type: "rectangle",
-    x: 100,
-    y: 180,
-    width: 420,
-    height: 250,
-    strokeColor: ink,
-    backgroundColor: yellow,
-    fillStyle: "solid",
-    strokeWidth: 2,
-  },
-  {
-    type: "text",
-    x: 125,
-    y: 205,
-    text: "01 — غرفة القيادة / Briefing",
-    fontSize: 22,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 125,
-    y: 248,
-    text: "• تأكيد قائمة اللقطات\n• توزيع الفريق\n• مراجعة الجدول الزمني\n• نقطة تجمع قبل الانطلاق",
-    fontSize: 17,
-    strokeColor: ink,
-    lineHeight: 1.45,
-  },
-  {
-    type: "rectangle",
-    x: 600,
-    y: 180,
-    width: 560,
-    height: 250,
-    strokeColor: ink,
-    backgroundColor: blue,
-    fillStyle: "solid",
-    strokeWidth: 2,
-  },
-  {
-    type: "text",
-    x: 625,
-    y: 205,
-    text: "02 — منطقة المعدات",
-    fontSize: 22,
-    strokeColor: ink,
-  },
-  {
-    type: "rectangle",
-    x: 625,
-    y: 255,
-    width: 235,
-    height: 120,
-    strokeColor: "#4e6477",
-    backgroundColor: "#ffffff",
-    fillStyle: "solid",
-  },
-  {
-    type: "text",
-    x: 645,
-    y: 278,
-    text: "CAMERA KIT",
-    fontSize: 18,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 645,
-    y: 310,
-    text: "2× Camera\n24–70mm + 70–200mm\nSpare batteries ×6",
-    fontSize: 15,
-    strokeColor: "#41464d",
-  },
-  {
-    type: "rectangle",
-    x: 885,
-    y: 255,
-    width: 235,
-    height: 120,
-    strokeColor: "#4e6477",
-    backgroundColor: "#ffffff",
-    fillStyle: "solid",
-  },
-  {
-    type: "text",
-    x: 905,
-    y: 278,
-    text: "LIGHT / AUDIO",
-    fontSize: 18,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 905,
-    y: 310,
-    text: "LED ×2\nWireless mics ×2\nTripods + monopod",
-    fontSize: 15,
-    strokeColor: "#41464d",
-  },
-  {
-    type: "rectangle",
-    x: 100,
-    y: 510,
-    width: 300,
-    height: 210,
-    strokeColor: ink,
-    backgroundColor: green,
-    fillStyle: "solid",
-    strokeWidth: 2,
-  },
-  {
-    type: "text",
-    x: 125,
-    y: 535,
-    text: "03 — Stage / Main Action",
-    fontSize: 20,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 125,
-    y: 580,
-    text: "لقطات رئيسية\n• افتتاح\n• الجمهور\n• المتحدث\n• تفاعل وحركة",
-    fontSize: 16,
-    strokeColor: ink,
-  },
-  {
-    type: "rectangle",
-    x: 450,
-    y: 510,
-    width: 300,
-    height: 210,
-    strokeColor: ink,
-    backgroundColor: pink,
-    fillStyle: "solid",
-    strokeWidth: 2,
-  },
-  {
-    type: "text",
-    x: 475,
-    y: 535,
-    text: "04 — Portrait Corner",
-    fontSize: 20,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 475,
-    y: 580,
-    text: "خلفية بسيطة\nKey light + fill\n5 دقائق / شخص\nVertical + Horizontal",
-    fontSize: 16,
-    strokeColor: ink,
-  },
-  {
-    type: "rectangle",
-    x: 800,
-    y: 510,
-    width: 360,
-    height: 210,
-    strokeColor: ink,
-    backgroundColor: "#ece8ff",
-    fillStyle: "solid",
-    strokeWidth: 2,
-  },
-  {
-    type: "text",
-    x: 825,
-    y: 535,
-    text: "05 — Interview / BTS",
-    fontSize: 20,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 825,
-    y: 580,
-    text: "مقابلات قصيرة\nB-roll\nلقطات خلف الكواليس\nAmbient audio",
-    fontSize: 16,
-    strokeColor: ink,
-  },
-  {
-    type: "rectangle",
-    x: 100,
-    y: 785,
-    width: 500,
-    height: 225,
-    strokeColor: ink,
-    backgroundColor: paper,
-    fillStyle: "solid",
-    strokeWidth: 2,
-  },
-  {
-    type: "text",
-    x: 125,
-    y: 810,
-    text: "06 — Logistics Checklist",
-    fontSize: 21,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 125,
-    y: 855,
-    text: "☐ بطاريات مشحونة\n☐ بطاقات ذاكرة فارغة\n☐ شواحن / Power bank\n☐ عقود وتصاريح\n☐ مياه + First Aid",
-    fontSize: 16,
-    strokeColor: ink,
-  },
-  {
-    type: "rectangle",
-    x: 650,
-    y: 785,
-    width: 510,
-    height: 225,
-    strokeColor: ink,
-    backgroundColor: accent,
-    fillStyle: "solid",
-    strokeWidth: 2,
-  },
-  {
-    type: "text",
-    x: 675,
-    y: 810,
-    text: "07 — IMPORTANT NOTES",
-    fontSize: 21,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 675,
-    y: 855,
-    text: "⚠ لا تضع المعدات في ممر الجمهور\n⚠ Backup card بعد كل ساعة\n⚠ لقطة واسعة كل 20 دقيقة\n⚠ راقب الإضاءة المتغيرة\n⚠ نسخة احتياطية للمواد قبل المغادرة",
-    fontSize: 16,
-    strokeColor: ink,
-  },
-  {
-    type: "rectangle",
-    x: 1230,
-    y: 180,
-    width: 270,
-    height: 250,
-    strokeColor: ink,
-    backgroundColor: "#ffffff",
-    fillStyle: "solid",
-  },
-  {
-    type: "text",
-    x: 1255,
-    y: 205,
-    text: "TEAM",
-    fontSize: 22,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 1255,
-    y: 250,
-    text: "Director / Roy\nCamera A\nCamera B\nPhoto + Portrait\nAudio / BTS",
-    fontSize: 17,
-    strokeColor: ink,
-    lineHeight: 1.35,
-  },
-  {
-    type: "arrow",
-    x: 520,
-    y: 305,
-    width: 75,
-    height: 0,
-    strokeColor: accent,
-    strokeWidth: 4,
-    endArrowhead: "arrow",
-  },
-  {
-    type: "arrow",
-    x: 760,
-    y: 450,
-    width: -250,
-    height: 55,
-    strokeColor: "#6d879d",
-    strokeWidth: 3,
-    endArrowhead: "arrow",
-  },
-  {
-    type: "arrow",
-    x: 760,
-    y: 620,
-    width: -45,
-    height: 0,
-    strokeColor: "#6d879d",
-    strokeWidth: 3,
-    endArrowhead: "arrow",
-  },
-  {
-    type: "arrow",
-    x: 760,
-    y: 620,
-    width: 35,
-    height: 0,
-    strokeColor: "#6d879d",
-    strokeWidth: 3,
-    endArrowhead: "arrow",
-  },
-  {
-    type: "arrow",
-    x: 1165,
-    y: 620,
-    width: 55,
-    height: 0,
-    strokeColor: "#6d879d",
-    strokeWidth: 3,
-    endArrowhead: "arrow",
-  },
-  {
-    type: "rectangle",
-    x: 1230,
-    y: 510,
-    width: 270,
-    height: 210,
-    strokeColor: ink,
-    backgroundColor: yellow,
-    fillStyle: "solid",
-    strokeWidth: 2,
-  },
-  {
-    type: "text",
-    x: 1252,
-    y: 535,
-    text: "FIELD NOTE",
-    fontSize: 19,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 1252,
-    y: 578,
-    text: "أفضل نقطة تصوير:\nيمين المسرح\nخلف الجمهور قليلًا\nمع خط رؤية مفتوح.",
-    fontSize: 17,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 1230,
-    y: 790,
-    text: "Legend",
-    fontSize: 20,
-    strokeColor: ink,
-  },
-  {
-    type: "text",
-    x: 1230,
-    y: 825,
-    text: "■ Action\n■ Equipment\n■ Notes\n→ Movement / workflow",
-    fontSize: 16,
-    strokeColor: "#454a51",
-  },
+  // Title
+  { type: "text", x: 0, y: 0, text: "FIELD PRODUCTION PLAN", fontSize: 30, strokeColor: "#111318" },
+  { type: "text", x: 0, y: 48, text: "مخطط ميداني لتصوير فعالية", fontSize: 20, strokeColor: "#555b63" },
+
+  // Command
+  { type: "rectangle", x: 0, y: 110, width: 380, height: 210, backgroundColor: "#fff1b3", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 20, y: 130, text: "01 — القيادة / Briefing", fontSize: 20, strokeColor: "#111318" },
+  { type: "text", x: 20, y: 180, text: "قائمة اللقطات\nتوزيع الفريق\nالجدول الزمني\nنقطة التجمع", fontSize: 17, strokeColor: "#20242a" },
+
+  // Equipment
+  { type: "rectangle", x: 430, y: 110, width: 520, height: 210, backgroundColor: "#dceeff", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 450, y: 130, text: "02 — المعدات", fontSize: 20, strokeColor: "#111318" },
+  { type: "rectangle", x: 455, y: 180, width: 220, height: 110, backgroundColor: "#ffffff", strokeColor: "#68717c", fillStyle: "solid" },
+  { type: "text", x: 470, y: 198, text: "CAMERA KIT", fontSize: 17, strokeColor: "#111318" },
+  { type: "text", x: 470, y: 230, text: "Camera ×2\n24–70 / 70–200\nBatteries ×6", fontSize: 15, strokeColor: "#454b53" },
+  { type: "rectangle", x: 700, y: 180, width: 220, height: 110, backgroundColor: "#ffffff", strokeColor: "#68717c", fillStyle: "solid" },
+  { type: "text", x: 715, y: 198, text: "LIGHT + AUDIO", fontSize: 17, strokeColor: "#111318" },
+  { type: "text", x: 715, y: 230, text: "LED ×2\nWireless mics ×2\nTripods", fontSize: 15, strokeColor: "#454b53" },
+
+  // Action zones
+  { type: "rectangle", x: 0, y: 370, width: 280, height: 190, backgroundColor: "#ddf4df", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 20, y: 392, text: "03 — STAGE", fontSize: 20, strokeColor: "#111318" },
+  { type: "text", x: 20, y: 440, text: "افتتاح\nالمتحدث\nالجمهور\nلحظات التفاعل", fontSize: 17, strokeColor: "#20242a" },
+
+  { type: "rectangle", x: 320, y: 370, width: 280, height: 190, backgroundColor: "#ffe2e9", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 340, y: 392, text: "04 — PORTRAIT", fontSize: 20, strokeColor: "#111318" },
+  { type: "text", x: 340, y: 440, text: "Key light + fill\n5 دقائق / شخص\nVertical + Horizontal", fontSize: 17, strokeColor: "#20242a" },
+
+  { type: "rectangle", x: 640, y: 370, width: 310, height: 190, backgroundColor: "#ece8ff", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 660, y: 392, text: "05 — INTERVIEW / BTS", fontSize: 20, strokeColor: "#111318" },
+  { type: "text", x: 660, y: 440, text: "مقابلات قصيرة\nB-roll\nخلف الكواليس\nAmbient audio", fontSize: 17, strokeColor: "#20242a" },
+
+  // Checklist
+  { type: "rectangle", x: 0, y: 610, width: 455, height: 230, backgroundColor: "#f8f7f2", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 20, y: 632, text: "06 — LOGISTICS CHECKLIST", fontSize: 20, strokeColor: "#111318" },
+  { type: "text", x: 20, y: 680, text: "☐ بطاريات مشحونة\n☐ بطاقات ذاكرة\n☐ شواحن / Power bank\n☐ تصاريح وعقود\n☐ مياه + First Aid", fontSize: 17, strokeColor: "#20242a" },
+
+  // Important notes
+  { type: "rectangle", x: 500, y: 610, width: 450, height: 230, backgroundColor: "#f2b33d", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 520, y: 632, text: "07 — IMPORTANT NOTES", fontSize: 20, strokeColor: "#111318" },
+  { type: "text", x: 520, y: 680, text: "⚠ لا تضع المعدات في ممر الجمهور\n⚠ Backup بعد كل ساعة\n⚠ لقطة واسعة كل 20 دقيقة\n⚠ راقب الإضاءة المتغيرة\n⚠ نسخة احتياطية قبل المغادرة", fontSize: 17, strokeColor: "#20242a" },
+
+  // Team
+  { type: "rectangle", x: 1000, y: 110, width: 250, height: 290, backgroundColor: "#ffffff", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 1020, y: 132, text: "TEAM", fontSize: 22, strokeColor: "#111318" },
+  { type: "text", x: 1020, y: 185, text: "Director / Roy\nCamera A\nCamera B\nPhoto + Portrait\nAudio / BTS", fontSize: 17, strokeColor: "#20242a" },
+
+  // Field note
+  { type: "rectangle", x: 1000, y: 440, width: 250, height: 215, backgroundColor: "#fff1b3", strokeColor: "#22252b", fillStyle: "solid", strokeWidth: 2 },
+  { type: "text", x: 1020, y: 462, text: "FIELD NOTE", fontSize: 19, strokeColor: "#111318" },
+  { type: "text", x: 1020, y: 510, text: "أفضل نقطة تصوير:\nيمين المسرح\nخلف الجمهور قليلًا\nمع خط رؤية مفتوح.", fontSize: 17, strokeColor: "#20242a" },
+
+  // Workflow arrows
+  { type: "arrow", x: 385, y: 215, width: 35, height: 0, strokeColor: "#f2b33d", strokeWidth: 3 },
+  { type: "arrow", x: 525, y: 335, width: -370, height: 25, strokeColor: "#71849a", strokeWidth: 3 },
+  { type: "arrow", x: 605, y: 465, width: 30, height: 0, strokeColor: "#71849a", strokeWidth: 3 },
+  { type: "arrow", x: 955, y: 465, width: 35, height: 0, strokeColor: "#71849a", strokeWidth: 3 },
 ];
 
-const sceneElements = convertToExcalidrawElements(elements, {
-  regenerateIds: true,
-});
+const sceneElements = convertToExcalidrawElements(elements);
 
 function App() {
-  const handleAPI = (api) => {
+  const onReady = (api) => {
+    // Inject after Excalidraw is fully ready.
+    api.updateScene({
+      elements: sceneElements,
+      appState: {
+        viewBackgroundColor: "#f7f6f1",
+      },
+    });
+
     window.setTimeout(() => {
-      const scene = api.getSceneElements();
-      if (scene.length) {
+      const current = api.getSceneElements();
+      if (current.length) {
         api.setViewport({
-          target: scene,
+          target: current,
           fit: "contain",
           animation: false,
         });
       }
-    }, 150);
+    }, 100);
   };
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <Excalidraw
-        excalidrawAPI={handleAPI}
+        excalidrawAPI={onReady}
         initialData={{
-          elements: sceneElements,
           appState: {
             viewBackgroundColor: "#f7f6f1",
           },
-          scrollToContent: true,
           files: {},
         }}
       />
@@ -425,5 +108,5 @@ function App() {
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
