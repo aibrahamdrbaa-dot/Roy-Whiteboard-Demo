@@ -15,7 +15,6 @@ const pink = "#ffe0e8";
 const paper = "#fbfaf5";
 
 const elements = [
-  // Title
   {
     type: "text",
     x: 120,
@@ -32,8 +31,6 @@ const elements = [
     fontSize: 18,
     strokeColor: "#5f646c",
   },
-
-  // Area: Command / briefing
   {
     type: "rectangle",
     x: 100,
@@ -62,8 +59,6 @@ const elements = [
     strokeColor: ink,
     lineHeight: 1.45,
   },
-
-  // Area: Camera / equipment
   {
     type: "rectangle",
     x: 600,
@@ -135,8 +130,6 @@ const elements = [
     fontSize: 15,
     strokeColor: "#41464d",
   },
-
-  // Field zones
   {
     type: "rectangle",
     x: 100,
@@ -164,7 +157,6 @@ const elements = [
     fontSize: 16,
     strokeColor: ink,
   },
-
   {
     type: "rectangle",
     x: 450,
@@ -188,11 +180,10 @@ const elements = [
     type: "text",
     x: 475,
     y: 580,
-    text: "خلفية بسيطة\nKey light + fill\n5 دقائق / شخص\nالتقاط Vertical + Horizontal",
+    text: "خلفية بسيطة\nKey light + fill\n5 دقائق / شخص\nVertical + Horizontal",
     fontSize: 16,
     strokeColor: ink,
   },
-
   {
     type: "rectangle",
     x: 800,
@@ -220,8 +211,6 @@ const elements = [
     fontSize: 16,
     strokeColor: ink,
   },
-
-  // Logistics
   {
     type: "rectangle",
     x: 100,
@@ -249,7 +238,6 @@ const elements = [
     fontSize: 16,
     strokeColor: ink,
   },
-
   {
     type: "rectangle",
     x: 650,
@@ -277,8 +265,6 @@ const elements = [
     fontSize: 16,
     strokeColor: ink,
   },
-
-  // Team boxes
   {
     type: "rectangle",
     x: 1230,
@@ -306,8 +292,6 @@ const elements = [
     strokeColor: ink,
     lineHeight: 1.35,
   },
-
-  // Arrows for movement
   {
     type: "arrow",
     x: 520,
@@ -358,8 +342,6 @@ const elements = [
     strokeWidth: 3,
     endArrowhead: "arrow",
   },
-
-  // Floating note
   {
     type: "rectangle",
     x: 1230,
@@ -387,8 +369,6 @@ const elements = [
     fontSize: 17,
     strokeColor: ink,
   },
-
-  // Legend
   {
     type: "text",
     x: 1230,
@@ -412,15 +392,29 @@ const sceneElements = convertToExcalidrawElements(elements, {
 });
 
 function App() {
+  const handleAPI = (api) => {
+    window.setTimeout(() => {
+      const scene = api.getSceneElements();
+      if (scene.length) {
+        api.setViewport({
+          target: scene,
+          fit: "contain",
+          animation: false,
+        });
+      }
+    }, 150);
+  };
+
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <Excalidraw
+        excalidrawAPI={handleAPI}
         initialData={{
           elements: sceneElements,
           appState: {
             viewBackgroundColor: "#f7f6f1",
-            scrollToContent: true,
           },
+          scrollToContent: true,
           files: {},
         }}
       />
