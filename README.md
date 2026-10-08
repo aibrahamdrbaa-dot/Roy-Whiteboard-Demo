@@ -1,2 +1,3 @@
-# Roy-Whiteboard-Demo
-Public demo of the Roy Whiteboard canvas — powered by Excalidraw.
+# Roy Whiteboard Demo
+
+Public blank Excalidraw board for previewing the Roy Whiteboard canvas.
